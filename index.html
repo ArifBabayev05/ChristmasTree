@@ -14,25 +14,29 @@
             overflow-x: hidden;
             display: flex;
             justify-content: center;
-            background-color: #001f3f;
+            background-color: #010032;
+            color: #212053;
+
             position: relative;
         }
 
         #newYearContainer {
             text-align: center;
             font-weight: bold;
-            background-color: #001f3f;
-            color: #808080;
+            background-color: #010032;
+            color: #212053;
         }
 
         @media only screen and (max-width: 600px) {
             body {
                 font-size: 5vw;
                 align-items: center;
-                overflow-x: hidden;
             }
         }
 
+        #newYearContainer p{
+            margin: 0.6px !important;
+        }
         #circleButton {
             position: fixed;
             bottom: 20px;
@@ -40,7 +44,7 @@
             width: 50px;
             height: 50px;
             background-color: #ff222275;
-            color: white;
+            color: #F9F9FF;
             border: none;
             border-radius: 50%;
             cursor: pointer;
@@ -69,7 +73,7 @@
                 var lineText = newYearText.repeat(Math.floor(window.innerWidth / newYearText.length));
                 var startIndex = Math.floor((lineText.length) / 2) - i;
                 var endIndex = Math.floor((lineText.length) / 2) + i + 2;
-                var coloredText = lineText.substring(0, startIndex) + '<span style="color: white;">' + lineText.substring(startIndex, endIndex) + '</span>' + lineText.substring(endIndex);
+                var coloredText = lineText.substring(0, startIndex) + '<span style="color: #F9F9FF;">' + lineText.substring(startIndex, endIndex) + '</span>' + lineText.substring(endIndex);
 
                 newLine.innerHTML = coloredText;
                 newYearContainer.appendChild(newLine);
@@ -87,7 +91,7 @@
                     var lineText = newYearText.repeat(Math.floor(window.innerWidth / newYearText.length));
                     var startIndex = Math.floor((lineText.length) / 2) - i;
                     var endIndex = Math.floor((lineText.length) / 2) + i + 2;
-                    var coloredText = lineText.substring(0, startIndex) + '<span style="color: white;">' + lineText.substring(startIndex, endIndex) + '</span>' + lineText.substring(endIndex);
+                    var coloredText = lineText.substring(0, startIndex) + '<span style="color: #F9F9FF;">' + lineText.substring(startIndex, endIndex) + '</span>' + lineText.substring(endIndex);
 
                     newLine.innerHTML = coloredText;
                     newYearContainer.appendChild(newLine);
