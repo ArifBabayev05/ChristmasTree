@@ -82,7 +82,7 @@
 
         function changeText() {
             var newText = prompt("Enter the new text:");
-            if (newText !== null) {
+            if (newText.length !=0) {
                 newText = newText.replace(/\s/g, ''); // Remove spaces
                 document.getElementById('newYearContainer').innerHTML = "";
                 var newYearText = newText;
@@ -97,6 +97,7 @@
                     newYearContainer.appendChild(newLine);
                 }
             }
+
         }
     </script>
 </body>
