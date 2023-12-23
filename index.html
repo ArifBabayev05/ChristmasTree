@@ -72,7 +72,7 @@
         function changeText() {
             var newText = prompt("Enter the new text:");
             if (newText !== null) {
-                newText = newText.replace(/\s/g, ''); // Remove spaces
+                newText = newText.replace(/\s/g, '');
                 document.getElementById('newYearContainer').innerHTML = "";
                 var newYearText = newText;
                 for (var i = -1; i < repeatCount; i++) {
@@ -81,7 +81,6 @@
                     var startIndex = Math.floor((lineText.length) / 2) - i;
                     var endIndex = Math.floor((lineText.length) / 2) + i + 2;
                     var coloredText = lineText.substring(0, startIndex) + '<span style="color: white;">' + lineText.substring(startIndex, endIndex) + '</span>' + lineText.substring(endIndex);
-
                     newLine.innerHTML = coloredText;
                     newYearContainer.appendChild(newLine);
                 }
