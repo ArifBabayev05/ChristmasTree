@@ -20,10 +20,17 @@
 
         #newYearContainer {
             text-align: center;
-            font-size: 1vw;
             font-weight: bold;
             background-color: #001f3f;
             color: #808080;
+        }
+
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 5vw;
+                align-items: center;
+                overflow-x: hidden;
+            }
         }
 
         #circleButton {
@@ -46,14 +53,14 @@
     <div id="newYearContainer"></div>
     <button id="circleButton" onclick="changeText()">Change Text</button>
     <script>
-        var repeatCount; 
+        var repeatCount;
 
         document.addEventListener('DOMContentLoaded', function () {
             var newYearContainer = document.getElementById('newYearContainer');
             var circleButton = document.getElementById('circleButton');
             var newYearText = 'YENİİL';
 
-            repeatCount = Math.floor(window.innerHeight / newYearText.length)/2;
+            repeatCount = Math.floor(window.innerHeight / newYearText.length) / 2;
 
             newYearContainer.style.maxHeight = `calc(100vh - ${circleButton.clientHeight}px)`;
 
@@ -72,7 +79,7 @@
         function changeText() {
             var newText = prompt("Enter the new text:");
             if (newText !== null) {
-                newText = newText.replace(/\s/g, '');
+                newText = newText.replace(/\s/g, ''); // Remove spaces
                 document.getElementById('newYearContainer').innerHTML = "";
                 var newYearText = newText;
                 for (var i = -1; i < repeatCount; i++) {
@@ -81,6 +88,7 @@
                     var startIndex = Math.floor((lineText.length) / 2) - i;
                     var endIndex = Math.floor((lineText.length) / 2) + i + 2;
                     var coloredText = lineText.substring(0, startIndex) + '<span style="color: white;">' + lineText.substring(startIndex, endIndex) + '</span>' + lineText.substring(endIndex);
+
                     newLine.innerHTML = coloredText;
                     newYearContainer.appendChild(newLine);
                 }
